@@ -1,4 +1,3 @@
-import 'package:aplicatie_retete/pages/home.dart';
 import 'package:aplicatie_retete/pages/search.dart';
 import 'package:aplicatie_retete/pages/account.dart';
 import 'package:aplicatie_retete/pages/saved.dart';
@@ -39,7 +38,6 @@ class _MainAppState extends State<MainApp> {
             });
           },
           children: [
-            HomePage(),
             SearchPage(),
             SavedPage(),
             AccountPage(),
@@ -60,10 +58,6 @@ class _MainAppState extends State<MainApp> {
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.bookmark),
