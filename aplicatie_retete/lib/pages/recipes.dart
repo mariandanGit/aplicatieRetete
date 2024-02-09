@@ -46,11 +46,9 @@ class _RecipesPageState extends State<RecipesPage> {
         _isLoading = false;
       });
     } else {
-      // Handle error case
       setState(() {
         _isLoading = false;
       });
-      // Display an error message or take appropriate action
       print('Failed to load recipes');
     }
   }
@@ -68,13 +66,13 @@ class _RecipesPageState extends State<RecipesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipe results'),
+        title: Text('Recipe results'), // Titlul barei de navigare
       ),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? Center(child: CircularProgressIndicator()) // Indicator de încărcare dacă se încarcă datele
           : _recipes.isEmpty
               ? Center(
-                  child: Text('No recipes found.'),
+                  child: Text('No recipes found.'), // Mesaj dacă nu se găsesc rețete
                 )
               : ListView.builder(
                   itemCount: _recipes.length,
@@ -130,7 +128,7 @@ class _RecipesPageState extends State<RecipesPage> {
                                     ),
                                     SizedBox(height: 5),
                                     Text(
-                                      'Tap to view details',
+                                      'Tap to view details', // Mesaj informativ
                                       style: TextStyle(
                                         fontSize: 14,
                                         color: Colors.grey,

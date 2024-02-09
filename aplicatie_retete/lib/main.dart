@@ -6,21 +6,21 @@ void main() {
 }
 
 class MainApp extends StatefulWidget {
-  const MainApp({super.key});
+  const MainApp({super.key}); // Constructorul clasei MainApp
 
   @override
   _MainAppState createState() => _MainAppState();
 }
 
-@override
+@override // Acest decorator trebuie să fie în interiorul clasei _MainAppState
 class _MainAppState extends State<MainApp> {
-  int _currentIndex = 0;
-  late PageController _pageController;
+  int _currentIndex = 0; // Indexul paginii curente
+  late PageController _pageController; // Controller pentru PageView
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(initialPage: _currentIndex);
+    _pageController = PageController(initialPage: _currentIndex); // Inițializare PageController
   }
 
   @override
@@ -28,18 +28,17 @@ class _MainAppState extends State<MainApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: PageView(
+        body: PageView( // Pagina principală este un PageView
           controller: _pageController,
-          onPageChanged: (index) {
+          onPageChanged: (index) { // Funcție apelată când pagina se schimbă
             setState(() {
-              _currentIndex = index;
+              _currentIndex = index; // Actualizare index pagină curentă
             });
           },
           children: [
-            SearchPage(),
+            SearchPage(), // Adăugarea paginii de căutare în PageView
           ],
         ),
-        
       ),
     );
   }

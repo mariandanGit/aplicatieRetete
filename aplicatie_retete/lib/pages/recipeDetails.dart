@@ -39,11 +39,9 @@ class _RecipeDetailsState extends State<RecipeDetails> {
       });
       _fetchInstructions();
     } else {
-      // Handle error case
       setState(() {
         _isLoading = false;
       });
-      // Display an error message or take appropriate action
       print('Failed to load recipe details');
     }
   }
@@ -61,7 +59,6 @@ class _RecipeDetailsState extends State<RecipeDetails> {
         _directions = data.isNotEmpty ? data[0]['steps'] : [];
       });
     } else {
-      // Handle error case
       print('Failed to load recipe instructions');
     }
   }
@@ -69,14 +66,14 @@ class _RecipeDetailsState extends State<RecipeDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true, // Make body go behind app bar
+      extendBodyBehindAppBar: true, // Extinde bara de navigare sub imagine
       appBar: AppBar(
-        backgroundColor: Colors.transparent, // Make app bar transparent
-        elevation: 0, // Remove app bar elevation
+        backgroundColor: Colors.transparent, // Face bara de navigare transparentă
+        elevation: 0,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: Colors.white, // Change the back button color to grey
+            color: Colors.white, // Setează culoarea săgeții de navigare la alb
           ),
           onPressed: () {
             Navigator.of(context).pop();
@@ -84,12 +81,11 @@ class _RecipeDetailsState extends State<RecipeDetails> {
         ),
       ),
       body: _isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? Center(child: CircularProgressIndicator()) // Indicator de încărcare dacă se încarcă datele
           : SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Image container with fading effect
                   Container(
                     height: 400,
                     decoration: BoxDecoration(
@@ -99,7 +95,6 @@ class _RecipeDetailsState extends State<RecipeDetails> {
                       ),
                     ),
                   ),
-                  // Recipe details container
                   Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -132,7 +127,6 @@ class _RecipeDetailsState extends State<RecipeDetails> {
                           ),
                         ),
                         SizedBox(height: 16),
-                        // Ingredients container
                         Text(
                           'Ingredients:',
                           style: TextStyle(
@@ -152,7 +146,6 @@ class _RecipeDetailsState extends State<RecipeDetails> {
                           }).toList(),
                         ),
                         SizedBox(height: 16),
-                        // Directions container
                         Text(
                           'Directions:',
                           style: TextStyle(

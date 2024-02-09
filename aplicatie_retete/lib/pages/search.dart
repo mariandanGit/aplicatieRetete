@@ -69,7 +69,7 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   void _onSuggestionSelected(Map<String, dynamic> suggestion) {
-    _controller.clear(); // Clear the input field after selection
+    _controller.clear(); // Se șterge conținutul câmpului de căutare
     String selectedIngredientName = suggestion['name'];
     bool alreadySelected =
         _selectedItems.any((item) => item['name'] == selectedIngredientName);
@@ -87,7 +87,6 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   void _onSubmitIngredients() {
-    // Navigate to the RecipesPage with the selected ingredients
     Navigator.push(
       context,
       MaterialPageRoute(
@@ -191,7 +190,6 @@ class _SearchPageState extends State<SearchPage> {
                 ),
               ),
             Container(
-              // check so you only add an ingredient once here
               width: double.infinity,
               height: _selectedItems.isEmpty ? null : 100,
               child: SingleChildScrollView(
