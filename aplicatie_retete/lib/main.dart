@@ -1,6 +1,4 @@
 import 'package:aplicatie_retete/pages/search.dart';
-import 'package:aplicatie_retete/pages/account.dart';
-import 'package:aplicatie_retete/pages/saved.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -39,38 +37,9 @@ class _MainAppState extends State<MainApp> {
           },
           children: [
             SearchPage(),
-            SavedPage(),
-            AccountPage(),
           ],
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-              _pageController.jumpToPage(
-                index,
-              );
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark),
-              label: 'Saved',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
-              label: 'Account',
-            ),
-          ],
-          selectedItemColor: Colors.red,
-          unselectedItemColor: Colors.grey,
-        ),
+        
       ),
     );
   }

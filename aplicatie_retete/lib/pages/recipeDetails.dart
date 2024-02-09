@@ -14,7 +14,7 @@ class RecipeDetails extends StatefulWidget {
 class _RecipeDetailsState extends State<RecipeDetails> {
   late Map<String, dynamic> _recipeDetails;
   late List<dynamic> _ingredients;
-  late List<dynamic> _directions;
+  late List<dynamic> _directions = [];
   bool _isLoading = true;
 
   @override

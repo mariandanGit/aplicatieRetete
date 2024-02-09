@@ -12,6 +12,7 @@ dependencies:
   http: ^1.2.0
   flutter_typeahead: ^4.0.0
   flutter_html: ^2.1.0
+  webview_flutter: ^2.0.0   
 
 dev_dependencies:
   flutter_test:

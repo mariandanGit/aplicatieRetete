@@ -21,13 +21,13 @@ class _SearchPageState extends State<SearchPage> {
   void initState() {
     super.initState();
     _suggestions = [];
-    //_fetchRandomRecipes();
+    _fetchRandomRecipes();
   }
 
   Future<void> _fetchRandomRecipes() async {
     final apiKey = 'd0c2009dfc854b279bf0e682b442dc6b';
     final url =
-        'https://api.spoonacular.com/recipes/random?number=1&apiKey=$apiKey';
+        'https://api.spoonacular.com/recipes/random?number=6&apiKey=$apiKey';
 
     final response = await http.get(Uri.parse(url));
 
